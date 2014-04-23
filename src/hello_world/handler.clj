@@ -88,6 +88,9 @@
     {:status 404 :body (str "No such short URL nyeet etyey : " id)})
 )
 
+(defn plus [x]
+  (+ x x))
+
 (defroutes app*
   (GET "/" request "Welcome!")
   (PUT "/:id" [id url] (retain url id))
