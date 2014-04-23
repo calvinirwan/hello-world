@@ -81,12 +81,18 @@
     {:status 409 :body (format "Short URL %s is already taken" id)}
 ))
 
+(defn verdict [x]
+  (if (< x 3) "yes" "no"))
+
 (defn redirect
   [id]
   (if-let [url (url-for id)]
     (response/redirect url)
     {:status 404 :body (str "No such short URL nyeet etyey : " id)})
 )
+
+(defn yolanda [x]
+  (str x x x x))
 
 (defroutes app*
   (GET "/" request "Welcome!")
